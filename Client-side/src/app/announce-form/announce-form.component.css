@@ -1,0 +1,21 @@
+#close-icon{
+    margin-left: auto;
+    order: 2;
+    font-weight: bolder;
+    display: flex;
+}
+
+#close-icon:hover{
+    cursor: pointer;
+}
+
+.full-width {
+    width: 100%;
+}
+
+#addbtn{
+    color: white;
+    background: rgb(0, 102, 255)
+}
+
+

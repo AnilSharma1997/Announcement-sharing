@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="full-width">
+      <div class="panel">
+        <div class="text-center"><strong>DASHBOARD</strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-3 ">
+      <h5><strong> &nbsp;&nbsp;Dashboard </strong></h5>
+      <mat-card>
+        <div class="row">
+          <span><a routerLink="/announcements">Announcements</a></span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="row">
+          <span><a routerLink="/users">Users</a></span>
+        </div>
+      </mat-card>
+    </div>
+
+    <div class="col-12 col-sm-9">
+      <mat-card>
+        <mat-list>
+          <div class="row">
+            <mat-list-item>
+              <div class="col-sm-9">
+                <h4><strong> ANNOUNCEMENTS </strong></h4>
+              </div>
+              <div class="col-sm-3">
+                <button mat-button (click)="openAnnounceForm()" mat-raised-button id="addbtn">ADD ANNOUNCEMENT</button>
+              </div>
+            </mat-list-item>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div class="row">
+            <mat-list-item>
+              <div class="col-sm-8 col-md-8">
+                <h4><strong> Announcement List </strong></h4>
+              </div>
+              <div class="col-sm-4 col-md-4" id="ABC">
+                <h4><strong> DATE </strong></h4>
+              </div>
+            </mat-list-item>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <mat-list-item
+            *ngFor="let announcement of announcementService.announcements | paginate: {itemsPerPage:5, currentPage:p}">
+            <div class="col-sm-8 col-md-8">
+              {{announcement.announcement}}
+            </div>
+
+            <div class="col-sm-2 col-md-2" id="date">
+              {{announcement.modified_date | date:'medium'}}
+            </div>
+            <div class="col-sm-2 col-md-2">
+              <button mat-button id="edit">
+                <a class="action-btn" (click)="onEdit(announcement)">
+                  <i class="material-icons">edit</i>
+                </a>
+              </button>
+              <button mat-button id="delete">
+                <a class="action-btn" (click)="onDelete(announcement)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </button>
+            </div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+          <pagination-controls (pageChange)="p = pageChange($event)" (pageChange)="p = $event" class="my-pagination">
+          </pagination-controls>
+        </mat-list>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            Featured
+          </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="custom-column">
+          <div class="custom-column-header">Header</div>
+          <div class="custom-column-content">
+            <ul class="list-group">
+              <li class="list-group-item"><i class="fa fa-check"></i> Cras justo odio</li>
+              <li class="list-group-item"><i class="fa fa-check"></i> Dapibus ac facilisis in</li>
+              <li class="list-group-item"><i class="fa fa-check"></i> Morbi leo risus</li>
+              <li class="list-group-item"><i class="fa fa-check"></i> Porta ac consectetur ac</li>
+              <li class="list-group-item"><i class="fa fa-check"></i> Vestibulum at eros</li>
+            </ul>
+          </div>
+          <div class="custom-column-footer"><button class="btn btn-primary btn-lg">Click here</button></div>
+        </div>
+      </div>
+    </div>
+ </div>  -->

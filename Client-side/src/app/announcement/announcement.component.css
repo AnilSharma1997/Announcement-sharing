@@ -1,0 +1,33 @@
+.full-width {
+	width: 100%;
+}
+
+.btn {
+	background: rgb(0, 102, 255);
+	color: white;
+}
+
+#ABC {
+	padding-left: 0px;
+}
+
+#addbtn {
+	background: rgb(0, 102, 255);
+	color: white;
+}
+
+#delete {
+	min-width: 3%;
+	padding: 0px;
+	margin-top: 10px;
+}
+
+#edit {
+	min-width: 3%;
+	padding: 0px;
+	margin-top: 10px;
+}
+
+#date {
+	padding-left: 10px;
+}
