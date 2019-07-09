@@ -1,0 +1,21 @@
+{
+  "name": "announcement",
+  "version": "1.0.0",
+  "description": "crud operations on announcement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "serve":"nodemon index.js"
+  },
+  "author": "anil sharma",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.7",
+    "nodemon": "^1.19.1"
+  }
+}
